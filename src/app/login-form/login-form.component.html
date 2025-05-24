@@ -1,0 +1,28 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-header">Authentication</div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" formControlName="username" />
+          <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+            Username is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" />
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+            Password is required
+          </div>
+        </div>
+
+        <button class="btn btn-success" type="submit" [disabled]="loginForm.invalid">
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
