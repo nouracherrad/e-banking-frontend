@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {CommonModule} from '@angular/common';
@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
